@@ -1,5 +1,7 @@
-public class interateAnStringArray {
+public class iterateAnStringArray {
     public static void main(String[] args) {
+
+        // This is how you iterate through a string in java
         String[] classes = {"Economy", "Premium Economy", "Business", "First Class"};
         String x;
         int i;
