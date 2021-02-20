@@ -1,3 +1,5 @@
+package Arrays;
+
 public class newArray {
     public static void main(String[] args) {
         //  Datatype Of array     name of the array            DATA TO PUT IN THE ARRAY

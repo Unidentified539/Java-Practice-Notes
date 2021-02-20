@@ -65,7 +65,20 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Code/Arrays/functions" />
+      <recent name="$PROJECT_DIR$/Code/Arrays" />
+      <recent name="$PROJECT_DIR$/Code/Work" />
+      <recent name="$PROJECT_DIR$/Code" />
+      <recent name="$PROJECT_DIR$/Practice Code" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -73,19 +86,18 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Java-Practice-Notes" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -98,6 +110,11 @@
       <workItem from="1613675811311" duration="350000" />
       <workItem from="1613676168998" duration="1205000" />
       <workItem from="1613679512059" duration="1828000" />
+      <workItem from="1613682737181" duration="33000" />
+      <workItem from="1613682778752" duration="2559000" />
+      <workItem from="1613685512462" duration="2470000" />
+      <workItem from="1613774101374" duration="1155000" />
+      <workItem from="1613779957264" duration="55000" />
     </task>
     <task id="LOCAL-00001" summary="auto commit">
       <created>1613676239125</created>
@@ -129,21 +146,77 @@
     <option name="LAST_COMMIT_MESSAGE" value="auto commit" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="147" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1613683085217">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="147" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.732@0.0.1366.732" timestamp="1613683085217" />
+    <state x="448" y="252" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1613688528908">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="448" y="252" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.732@0.0.1366.732" timestamp="1613688528908" />
     <state x="441" y="221" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1613680562919">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="441" y="221" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.732@0.0.1366.732" timestamp="1613680562919" />
-    <state x="283" y="98" key="Vcs.Push.Dialog.v2" timestamp="1613676370990">
+    <state x="100" y="100" width="1166" height="532" key="DiffContextDialog" timestamp="1613688632766">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="283" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1613676370990" />
+    <state x="100" y="100" width="1166" height="532" key="DiffContextDialog/0.0.1366.732@0.0.1366.732" timestamp="1613688632766" />
+    <state x="466" y="124" width="424" height="483" key="FileChooserDialogImpl" timestamp="1613774181896">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="466" y="124" width="424" height="483" key="FileChooserDialogImpl/0.0.1366.732@0.0.1366.732" timestamp="1613774181896" />
+    <state width="1366" height="170" key="GridCell.Tab.0.bottom" timestamp="1613750276710">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1366" height="170" key="GridCell.Tab.0.bottom/0.0.1366.732@0.0.1366.732" timestamp="1613750276710" />
+    <state width="1366" height="170" key="GridCell.Tab.0.center" timestamp="1613750276707">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1366" height="170" key="GridCell.Tab.0.center/0.0.1366.732@0.0.1366.732" timestamp="1613750276707" />
+    <state width="1366" height="170" key="GridCell.Tab.0.left" timestamp="1613750276698">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1366" height="170" key="GridCell.Tab.0.left/0.0.1366.732@0.0.1366.732" timestamp="1613750276698" />
+    <state width="1366" height="170" key="GridCell.Tab.0.right" timestamp="1613750276709">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1366" height="170" key="GridCell.Tab.0.right/0.0.1366.732@0.0.1366.732" timestamp="1613750276709" />
+    <state x="271" y="112" key="IDE.errors.dialog" timestamp="1613683777357">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="271" y="112" key="IDE.errors.dialog/0.0.1366.732@0.0.1366.732" timestamp="1613683777357" />
+    <state x="171" y="0" key="SettingsEditor" timestamp="1613687134613">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="171" y="0" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1613687134613" />
+    <state x="283" y="98" key="Vcs.Push.Dialog.v2" timestamp="1613687982385">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="283" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1613687982385" />
+    <state x="100" y="100" width="1166" height="532" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1613688632766">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="100" y="100" width="1166" height="532" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1366.732@0.0.1366.732" timestamp="1613688632766" />
+    <state x="490" y="279" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613686555342">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="490" y="279" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.732@0.0.1366.732" timestamp="1613686555342" />
+    <state x="388" y="60" width="590" height="612" key="find.popup" timestamp="1613683699600">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="388" y="60" width="590" height="612" key="find.popup/0.0.1366.732@0.0.1366.732" timestamp="1613683699600" />
+    <state x="228" y="0" key="new project wizard" timestamp="1613683439099">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="228" y="0" key="new project wizard/0.0.1366.732@0.0.1366.732" timestamp="1613683439099" />
     <state x="347" y="160" key="run.anything.popup" timestamp="1613679551131">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="347" y="160" key="run.anything.popup/0.0.1366.732@0.0.1366.732" timestamp="1613679551131" />
-    <state x="346" y="52" width="672" height="678" key="search.everywhere.popup" timestamp="1613680574112">
+    <state x="346" y="52" width="672" height="678" key="search.everywhere.popup" timestamp="1613683623777">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="346" y="52" width="672" height="678" key="search.everywhere.popup/0.0.1366.732@0.0.1366.732" timestamp="1613680574112" />
+    <state x="346" y="52" width="672" height="678" key="search.everywhere.popup/0.0.1366.732@0.0.1366.732" timestamp="1613683623777" />
   </component>
 </project>

@@ -1,3 +1,5 @@
+package Arrays;
+
 public class iterateAnStringArray {
     public static void main(String[] args) {
 

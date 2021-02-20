@@ -1,6 +1,6 @@
-package functions;
+package functions.methods;
 
-public class findhighorlow {
+public class findHighOrlow1 {
 
     // Simple java function to find the minimum of an array
     public void findMin(int[] array) {
