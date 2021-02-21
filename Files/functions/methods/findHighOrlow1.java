@@ -1,4 +1,4 @@
-package functions.methods;
+package methods;
 
 public class findHighOrlow1 {
 

@@ -1,4 +1,4 @@
-package functions.methods;
+package methods;
 
 public class removeArrayElement4 {
     public void removeElement(int[] array, int removeIndex) {

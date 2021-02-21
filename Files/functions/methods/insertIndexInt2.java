@@ -1,9 +1,13 @@
-package functions.methods;
+package methods;
 
-public class insertIndexString5 {
-    public void insert(int[] array, int index, int value) {
+public class insertIndexInt2 {
+
+
+
+    public void insertStr(String[] array, int index, String value) {
+
         int insertIndex = index;
-        int newValue = value;
+        String newValue = value;
 
         for (int i = array.length - 1; i > insertIndex; i--) {
             array[i] = array[i - 1];
