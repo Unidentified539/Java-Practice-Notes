@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0679e0a-7785-42d0-8e6b-c98d41b9b206" name="Default Changelist" comment="auto commit" />
+    <list default="true" id="7bea7514-6efd-4147-955e-328565b8b1e3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,27 +33,18 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Itachi Uchiha &lt;71221226+unidentified539@users.noreply.github.com&gt;" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="ProjectId" id="1oisGscscGya3TBMcrRP6qKMcFg" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectId" id="1ofRl3okcV9XA0uP2VMf5fIQCHV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -64,66 +55,32 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Code/Arrays/functions" />
-      <recent name="$PROJECT_DIR$/Code/Arrays" />
-      <recent name="$PROJECT_DIR$/Code/Work" />
-      <recent name="$PROJECT_DIR$/Code" />
-      <recent name="$PROJECT_DIR$/Practice Code" />
-    </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="findhighotlow.java" />
-    </option>
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Java-Practice-Notes" />
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d0679e0a-7785-42d0-8e6b-c98d41b9b206" name="Default Changelist" comment="" />
-      <created>1613675809602</created>
+      <changelist id="7bea7514-6efd-4147-955e-328565b8b1e3" name="Default Changelist" comment="" />
+      <created>1613780653261</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1613675809602</updated>
-      <workItem from="1613675811311" duration="350000" />
-      <workItem from="1613676168998" duration="1205000" />
-      <workItem from="1613679512059" duration="1828000" />
-      <workItem from="1613682737181" duration="33000" />
-      <workItem from="1613682778752" duration="2559000" />
-      <workItem from="1613685512462" duration="2470000" />
-      <workItem from="1613774101374" duration="1155000" />
-      <workItem from="1613779957264" duration="55000" />
+      <updated>1613780653261</updated>
+      <workItem from="1613780654464" duration="340000" />
+      <workItem from="1613861904494" duration="4139000" />
     </task>
-    <task id="LOCAL-00001" summary="auto commit">
-      <created>1613676239125</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1613676239125</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,81 +99,28 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="auto commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="auto commit" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="147" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1613683085217">
+    <state x="184" y="1" key="SettingsEditor" timestamp="1613862623549">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="147" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.732@0.0.1366.732" timestamp="1613683085217" />
-    <state x="448" y="252" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1613688528908">
+    <state x="184" y="1" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1613862623549" />
+    <state x="100" y="100" width="1166" height="532" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1613865293623">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="448" y="252" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.732@0.0.1366.732" timestamp="1613688528908" />
-    <state x="441" y="221" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1613680562919">
+    <state x="100" y="100" width="1166" height="532" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.732@0.0.1366.732" timestamp="1613865293623" />
+    <state x="100" y="100" width="1166" height="532" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1613863635570">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="441" y="221" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.732@0.0.1366.732" timestamp="1613680562919" />
-    <state x="100" y="100" width="1166" height="532" key="DiffContextDialog" timestamp="1613688632766">
+    <state x="100" y="100" width="1166" height="532" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1366.732@0.0.1366.732" timestamp="1613863635570" />
+    <state x="346" y="52" width="672" height="678" key="search.everywhere.popup" timestamp="1613865236426">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="100" y="100" width="1166" height="532" key="DiffContextDialog/0.0.1366.732@0.0.1366.732" timestamp="1613688632766" />
-    <state x="466" y="124" width="424" height="483" key="FileChooserDialogImpl" timestamp="1613774181896">
+    <state x="346" y="52" width="672" height="678" key="search.everywhere.popup/0.0.1366.732@0.0.1366.732" timestamp="1613865236426" />
+    <state x="413" y="273" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1613780871382">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="466" y="124" width="424" height="483" key="FileChooserDialogImpl/0.0.1366.732@0.0.1366.732" timestamp="1613774181896" />
-    <state width="1366" height="170" key="GridCell.Tab.0.bottom" timestamp="1613750276710">
-      <screen x="0" y="0" width="1366" height="732" />
-    </state>
-    <state width="1366" height="170" key="GridCell.Tab.0.bottom/0.0.1366.732@0.0.1366.732" timestamp="1613750276710" />
-    <state width="1366" height="170" key="GridCell.Tab.0.center" timestamp="1613750276707">
-      <screen x="0" y="0" width="1366" height="732" />
-    </state>
-    <state width="1366" height="170" key="GridCell.Tab.0.center/0.0.1366.732@0.0.1366.732" timestamp="1613750276707" />
-    <state width="1366" height="170" key="GridCell.Tab.0.left" timestamp="1613750276698">
-      <screen x="0" y="0" width="1366" height="732" />
-    </state>
-    <state width="1366" height="170" key="GridCell.Tab.0.left/0.0.1366.732@0.0.1366.732" timestamp="1613750276698" />
-    <state width="1366" height="170" key="GridCell.Tab.0.right" timestamp="1613750276709">
-      <screen x="0" y="0" width="1366" height="732" />
-    </state>
-    <state width="1366" height="170" key="GridCell.Tab.0.right/0.0.1366.732@0.0.1366.732" timestamp="1613750276709" />
-    <state x="271" y="112" key="IDE.errors.dialog" timestamp="1613683777357">
-      <screen x="0" y="0" width="1366" height="732" />
-    </state>
-    <state x="271" y="112" key="IDE.errors.dialog/0.0.1366.732@0.0.1366.732" timestamp="1613683777357" />
-    <state x="171" y="0" key="SettingsEditor" timestamp="1613687134613">
-      <screen x="0" y="0" width="1366" height="732" />
-    </state>
-    <state x="171" y="0" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1613687134613" />
-    <state x="283" y="98" key="Vcs.Push.Dialog.v2" timestamp="1613687982385">
-      <screen x="0" y="0" width="1366" height="732" />
-    </state>
-    <state x="283" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1613687982385" />
-    <state x="100" y="100" width="1166" height="532" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1613688632766">
-      <screen x="0" y="0" width="1366" height="732" />
-    </state>
-    <state x="100" y="100" width="1166" height="532" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1366.732@0.0.1366.732" timestamp="1613688632766" />
-    <state x="490" y="279" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613686555342">
-      <screen x="0" y="0" width="1366" height="732" />
-    </state>
-    <state x="490" y="279" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.732@0.0.1366.732" timestamp="1613686555342" />
-    <state x="388" y="60" width="590" height="612" key="find.popup" timestamp="1613683699600">
-      <screen x="0" y="0" width="1366" height="732" />
-    </state>
-    <state x="388" y="60" width="590" height="612" key="find.popup/0.0.1366.732@0.0.1366.732" timestamp="1613683699600" />
-    <state x="228" y="0" key="new project wizard" timestamp="1613683439099">
-      <screen x="0" y="0" width="1366" height="732" />
-    </state>
-    <state x="228" y="0" key="new project wizard/0.0.1366.732@0.0.1366.732" timestamp="1613683439099" />
-    <state x="347" y="160" key="run.anything.popup" timestamp="1613679551131">
-      <screen x="0" y="0" width="1366" height="732" />
-    </state>
-    <state x="347" y="160" key="run.anything.popup/0.0.1366.732@0.0.1366.732" timestamp="1613679551131" />
-    <state x="346" y="52" width="672" height="678" key="search.everywhere.popup" timestamp="1613683623777">
-      <screen x="0" y="0" width="1366" height="732" />
-    </state>
-    <state x="346" y="52" width="672" height="678" key="search.everywhere.popup/0.0.1366.732@0.0.1366.732" timestamp="1613683623777" />
+    <state x="413" y="273" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.732@0.0.1366.732" timestamp="1613780871382" />
   </component>
 </project>
