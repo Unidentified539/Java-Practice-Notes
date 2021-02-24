@@ -1,11 +1,6 @@
-import functions.methods.*;
 public class Main {
-    public static int array;
     public static void main(String[] args) {
+        String str = "Hello World!";
 
-        insertIndexInt2 insertFunc = new insertIndexInt2();
-
-
-        System.out.println();
     }
 }

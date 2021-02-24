@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bea7514-6efd-4147-955e-328565b8b1e3" name="Default Changelist" comment="" />
+    <list default="true" id="7bea7514-6efd-4147-955e-328565b8b1e3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code1/Arrays/myCode/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Code1/Arrays/myCode/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code1/Arrays/myCode/functions/methods/createArray.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,9 +60,19 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Java-Practice-Notes" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -69,6 +84,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -80,6 +100,8 @@
       <updated>1613780653261</updated>
       <workItem from="1613780654464" duration="340000" />
       <workItem from="1613861904494" duration="4139000" />
+      <workItem from="1614124531829" duration="11000" />
+      <workItem from="1614124642583" duration="461000" />
     </task>
     <servers />
   </component>
@@ -91,7 +113,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -102,10 +136,34 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="1" key="SettingsEditor" timestamp="1613862623549">
+    <state x="339" y="83" key="FileChooserDialogImpl" timestamp="1614124794708">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="184" y="1" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1613862623549" />
+    <state x="339" y="83" key="FileChooserDialogImpl/0.0.1366.732@0.0.1366.732" timestamp="1614124794708" />
+    <state width="1320" height="163" key="GridCell.Tab.0.bottom" timestamp="1614124827966">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1320" height="163" key="GridCell.Tab.0.bottom/0.0.1366.732@0.0.1366.732" timestamp="1614124827966" />
+    <state width="1320" height="163" key="GridCell.Tab.0.center" timestamp="1614124827966">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1320" height="163" key="GridCell.Tab.0.center/0.0.1366.732@0.0.1366.732" timestamp="1614124827966" />
+    <state width="1320" height="163" key="GridCell.Tab.0.left" timestamp="1614124827965">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1320" height="163" key="GridCell.Tab.0.left/0.0.1366.732@0.0.1366.732" timestamp="1614124827965" />
+    <state width="1320" height="163" key="GridCell.Tab.0.right" timestamp="1614124827966">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1320" height="163" key="GridCell.Tab.0.right/0.0.1366.732@0.0.1366.732" timestamp="1614124827966" />
+    <state x="184" y="0" key="SettingsEditor" timestamp="1614124797908">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1614124797908" />
+    <state x="283" y="98" key="Vcs.Push.Dialog.v2" timestamp="1614125055990">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="283" y="98" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1614125055990" />
     <state x="100" y="100" width="1166" height="532" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1613865293623">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
@@ -114,6 +172,10 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="100" y="100" width="1166" height="532" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1366.732@0.0.1366.732" timestamp="1613863635570" />
+    <state x="490" y="279" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614125103425">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="490" y="279" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.732@0.0.1366.732" timestamp="1614125103425" />
     <state x="346" y="52" width="672" height="678" key="search.everywhere.popup" timestamp="1613865236426">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
