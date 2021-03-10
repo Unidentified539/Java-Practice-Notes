@@ -1,8 +1,8 @@
 package practiceFiles;
 
+
 public class Main {
-    private ClassAName = varName;
-    public ClassBName(ClassAName varName) {
-        this.varName = varName;
+    public static void main(String[] args) {
+        System.out.println("s");
     }
 }
