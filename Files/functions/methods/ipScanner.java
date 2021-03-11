@@ -7,12 +7,11 @@ import java.net.URL;
 import java.net.UnknownHostException;
 
 public class ipScanner {
-    public static void getIP() throws UnknownHostException {
+    public String getIP() throws UnknownHostException {
         // Returns the instance of InetAddress containing
         // local host name and address
         InetAddress localhost = InetAddress.getLocalHost();
-        System.out.println("System IP Address : " +
-                (localhost.getHostAddress()).trim());
+
 
         // Find public IP address
         String systemipaddress = "";
@@ -30,7 +29,7 @@ public class ipScanner {
         {
             systemipaddress = "Cannot Execute Properly";
         }
-        System.out.println("Public IP Address: " + systemipaddress +"\n");
+        return localhost.getHostAddress();
     }
 
 
