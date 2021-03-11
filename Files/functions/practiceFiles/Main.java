@@ -1,7 +1,6 @@
 package practiceFiles;
 
 import methods.*;
-
 import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Scanner;
