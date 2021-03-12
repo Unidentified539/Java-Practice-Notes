@@ -8,10 +8,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws UnknownHostException {
-        banUser function = new banUser();
-        ipScanner ip = new ipScanner();
-        String userIp = ip.getIP();
-        if (function.checkBan(userIp) == true) {
+        mainPackage allFunctions = new mainPackage();
+        String userIp = allFunctions.getIP();
+        if (allFunctions.checkBan(userIp) == true) {
             System.out.println("You have been banned");
             System.exit(0);
         }
@@ -25,7 +24,7 @@ public class Main {
         System.out.println("Would you like to be banned? y/n");
         String answer = sc.nextLine();
         if (answer.equals("y")) {
-            function.createBan(userIp);
+            allFunctions.createBan(userIp);
         }
         else {
             System.out.println("Okay");
