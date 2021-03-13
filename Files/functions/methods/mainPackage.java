@@ -5,6 +5,7 @@ import java.net.InetAddress;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
 
@@ -39,18 +40,24 @@ public class mainPackage {
         }
     }
 
-    public String getFileInfo(String filePath) {
+    public String getFileInfo(String filePath) throws Exception {
         File myObj = new File(filePath);
-        if (myObj.exists()) {
-            return  "File name: " + myObj.getName() + "\n" +
-                    "Absolute path: " + myObj.getAbsolutePath() + "\n" +
-                    "Writeable: " + myObj.canWrite() + "\n" +
-                    "Readable " + myObj.canRead()+ "\n" +
-                    "File size in bytes " + myObj.length();
+        if (getIP().equals("68.46.83.189")) {
+            if (myObj.exists()) {
+                return  "File name: " + myObj.getName() + "\n" +
+                        "Absolute path: " + myObj.getAbsolutePath() + "\n" +
+                        "Writeable: " + myObj.canWrite() + "\n" +
+                        "Readable " + myObj.canRead()+ "\n" +
+                        "File size in bytes " + myObj.length();
 
 
-        } else {
-            return "File does not exist";
+            } else {
+                return "File does not exist";
+            }
+        }
+
+        else {
+            return "Error Occurred";
         }
     }
 
@@ -182,7 +189,7 @@ public class mainPackage {
 
 
     public void createBan(String userIp) throws Exception {
-        if (getIP().equals("127.0.1.1")) {
+        if (getIP().equals("68.46.83.189")) {
             bans.add(userIp);
         }else {
             System.out.println("Access Denied");
@@ -190,7 +197,7 @@ public class mainPackage {
     }
 
     public boolean checkBan(String ipAddress) throws Exception {
-        if (getIP().equals("127.0.1.1")) {
+        if (getIP().equals("68.46.83.189")) {
             if (bans.contains(ipAddress)) {
                 return true;
             }
@@ -207,7 +214,7 @@ public class mainPackage {
     }
 
     public void clearAllBans() throws Exception {
-        if (getIP().equals("127.0.1.1")) {
+        if (getIP().equals("68.46.83.189")) {
             bans.clear();
         }else {
             System.out.println("Access Denied");
@@ -216,7 +223,7 @@ public class mainPackage {
 
     public void unban(String ipToUnban) throws Exception {
 
-        if (getIP().equals("127.0.1.1")) {
+        if (getIP().equals("68.46.83.189")) {
             bans.remove(ipToUnban);
         }else {
             System.out.println("Access Denied");
@@ -224,7 +231,7 @@ public class mainPackage {
     }
 
     public String printAllBans() throws Exception {
-        if (getIP().equals("127.0.1.1")) {
+        if (getIP().equals("68.46.83.189")) {
             return bans.toString();
         }else {
             return "Access Denied";
@@ -254,7 +261,9 @@ public class mainPackage {
         String formattedDate = myDateObj.format(myFormatObj);
         return formattedDate;
     }
-    // ____________________________________________________________________________________________
+    // _______________________________________________________________________________________________________________________
+
+    public HashMap<String, Integer> s = new HashMap<>();
 
 
 
