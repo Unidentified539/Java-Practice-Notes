@@ -1,4 +1,5 @@
 package methods;
+
 import java.io.*;
 import java.net.InetAddress;
 import java.net.URL;
@@ -12,7 +13,6 @@ public class mainPackage {
         try {
             File myObj = new File(fileName);
             if (myObj.createNewFile()) {
-                System.out.println("Success");
             } else {
                 System.out.println("Error");
             }
@@ -65,10 +65,10 @@ public class mainPackage {
         return filePath;
     }
 
-    public void writeToFile(String filepath, String writeThis) {
+    public void writeToFile(String filepath, Object writeThis) {
         try {
             FileWriter myWriter = new FileWriter(filepath);
-            myWriter.write(writeThis);
+            myWriter.write(String.valueOf(writeThis));
             myWriter.close();
         } catch (IOException e) {
             System.out.println("An error occurred.");
@@ -109,7 +109,7 @@ public class mainPackage {
     /* IP ADDRESS RELATED FUNCTIONS
     __________________________________________________________________________
      */
-    public String getIP() throws UnknownHostException {
+    public String getIP() throws Exception {
         // Returns the instance of InetAddress containing
         // local host name and address
         InetAddress localhost = InetAddress.getLocalHost();
@@ -131,7 +131,7 @@ public class mainPackage {
         {
             systemipaddress = "Cannot Execute Properly";
         }
-        return localhost.getHostAddress();
+        return systemipaddress;
     }
 
     // Simple java function to find the minimum of an array
@@ -156,7 +156,7 @@ public class mainPackage {
                 maxVal = array[i];
             }
         }
-       return maxVal;
+        return maxVal;
     }
 
     public void insertStrElement(String[] array, int index, String value) {
@@ -172,39 +172,66 @@ public class mainPackage {
 
     }
 
-    public ArrayList<String> bans = new ArrayList<>();
 
     /* MODERATION: BAN FUNCTIONS
      _________________________________________________________________________________________________________
 
-     */
+                                                                                                                 */
+    public ArrayList<String> bans = new ArrayList<>();
 
 
-
-    public void createBan(String userIp) {
-        bans.add(userIp);
+    public void createBan(String userIp) throws Exception {
+        if (getIP().equals("127.0.1.1")) {
+            bans.add(userIp);
+        }else {
+            System.out.println("Access Denied");
+        }
     }
 
-    public boolean checkBan(String ipAddress) {
-        if (bans.contains(ipAddress)) {
-            return true;
+    public boolean checkBan(String ipAddress) throws Exception {
+        if (getIP().equals("127.0.1.1")) {
+            if (bans.contains(ipAddress)) {
+                return true;
+            }
+            else {
+                return false;
+            }
         }
         else {
-            return false;
+            System.out.println("Access Denied");
+            System.exit(0);
+        }
+
+        return false;
+    }
+
+    public void clearAllBans() throws Exception {
+        if (getIP().equals("127.0.1.1")) {
+            bans.clear();
+        }else {
+            System.out.println("Access Denied");
         }
     }
 
-    public void clearAllBans() {
-        bans.clear();
+    public void unban(String ipToUnban) throws Exception {
+
+        if (getIP().equals("127.0.1.1")) {
+            bans.remove(ipToUnban);
+        }else {
+            System.out.println("Access Denied");
+        }
     }
 
-    public void unban(String ipToUnban) {
-        bans.remove(ipToUnban);
+    public String printAllBans() throws Exception {
+        if (getIP().equals("127.0.1.1")) {
+            return bans.toString();
+        }else {
+            return "Access Denied";
+        }
+
     }
 
-    public String printAllBans() {
-        return bans.toString();
-    }
+
 
 
 

@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String[] args) throws UnknownHostException {
+    public static void main(String[] args) throws Exception {
         mainPackage allFunctions = new mainPackage();
         String userIp = allFunctions.getIP();
         if (allFunctions.checkBan(userIp) == true) {
