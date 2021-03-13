@@ -3,9 +3,10 @@ package methods;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.URL;
-import java.net.UnknownHostException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
 
 public class mainPackage {
 
@@ -230,6 +231,32 @@ public class mainPackage {
         }
 
     }
+
+    // Java Date Functions
+    //_______________________________________________________________________________________________________________
+
+    public String getDate() {
+        LocalDateTime myDateObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("E-MM-dd-yyyy");
+        String formattedDate = myDateObj.format(myFormatObj);
+        return formattedDate;
+    }
+
+    public String getYear() {
+        LocalDateTime myDateObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy");
+        String formattedDate = myDateObj.format(myFormatObj);
+        return formattedDate;
+    }
+    public String getDay() {
+        LocalDateTime myDateObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("E");
+        String formattedDate = myDateObj.format(myFormatObj);
+        return formattedDate;
+    }
+    // ____________________________________________________________________________________________
+
+
 
 
 
