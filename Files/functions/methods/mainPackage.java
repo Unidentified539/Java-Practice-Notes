@@ -2,7 +2,11 @@ package methods;
 
 import java.io.*;
 import java.net.InetAddress;
+import java.net.URI;
 import java.net.URL;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,6 +14,8 @@ import java.util.Scanner;
 import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
 
 public class mainPackage {
+
+
 
     public void newFile(String fileName) {
         try {
@@ -261,9 +267,243 @@ public class mainPackage {
         String formattedDate = myDateObj.format(myFormatObj);
         return formattedDate;
     }
-    // _______________________________________________________________________________________________________________________
+    // ___________________________________________________________________________________________________
 
     public HashMap<String, Integer> s = new HashMap<>();
+
+    // Websites
+    // --------------------------------------------------------------------------------------------
+
+    public String getWebsiteData(String websiteURL) throws IOException {
+        //Instantiating the URL class
+        URL url = new URL(websiteURL);
+        //Retrieving the contents of the specified page
+        Scanner sc = new Scanner(url.openStream());
+        //Instantiating the StringBuffer class to hold the result
+        StringBuffer sb = new StringBuffer();
+        while (sc.hasNext()) {
+            sb.append(sc.next());
+            //System.out.println(sc.next());
+        }
+        //Retrieving the String from the String Buffer object
+        String result = sb.toString();
+        //Removing the HTML tags
+
+        return result;
+
+
+    }
+
+    public String searchIPAddress(String ipAddress) throws Exception {
+        //Instantiating the URL class
+        URL url = new URL("http://ip-api.com/json/" + getIP());
+        //Retrieving the contents of the specified page
+        Scanner sc = new Scanner(url.openStream());
+        //Instantiating the StringBuffer class to hold the result
+        StringBuffer sb = new StringBuffer();
+        while (sc.hasNext()) {
+            sb.append(sc.next());
+            //System.out.println(sc.next());
+        }
+        //Retrieving the String from the String Buffer object
+        String result = sb.toString();
+        //Removing the HTML tags
+
+        return result;
+
+    }
+
+    // STOCK METHODS
+
+
+    public String getStockStats(String stockQuote) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=" + stockQuote +"&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String getStockSummary(String stockQuote) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockQuote + "&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String getStockRecommendations(String stockQuote) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-recommendations?symbol=" + stockQuote))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String getUpgradesDowngrades(String stockQuote) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-upgrades-downgrades?symbol=" + stockQuote +"&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String getStockChart(String stockQuote) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-chart?interval=5m&symbol=" + stockQuote +"&range=1d&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String getStockHistory(String stockQuote) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v3/get-historical-data?symbol=" + stockQuote +"&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String getStockProfile(String stockQuote) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-profile?symbol=" + stockQuote + "&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+    public String getStockFinancial(String stockQuote) throws IOException, InterruptedException {
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-financials?symbol=" + stockQuote + "&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String getTimeseries(String stockQuote) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-timeseries?symbol=" + stockQuote + "&period2=1571590800&period1=493578000&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String getCashFlow(String stockQuote) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-cash-flow?symbol=" + stockQuote + "&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return  response.body();
+    }
+
+    public String getBalanceSheet(String stockQuote) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-balance-sheet?symbol=" + stockQuote + "&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String getAnalysis(String stockQuote) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-analysis?symbol=" + stockQuote +"&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String getOptions(String stockQuotes) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-options?symbol=" + stockQuotes + "&date=1562284800&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+
+    }
+
+    public String getHolders(String stockQuote) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-holders?symbol=" + stockQuote +"&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String getInsights(String stockQuotes) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-insights?symbol=" + stockQuotes))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String getInsiderTransactions(String stockQuotes) throws  IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-insider-transactions?symbol=" + stockQuotes + "&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
+    public String getInsiderRoster(String stockQuotes) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-insider-roster?symbol=" + stockQuotes + "&region=US"))
+                .header("x-rapidapi-key", "7478aa555dmshe9192012b034648p12adafjsn1c63a03a76c4")
+                .header("x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        return response.body();
+    }
+
 
 
 
