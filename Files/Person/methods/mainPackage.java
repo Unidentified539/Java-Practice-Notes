@@ -1,4 +1,6 @@
 package methods;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -9,7 +11,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
 
@@ -269,7 +270,6 @@ public class mainPackage {
     }
     // ___________________________________________________________________________________________________
 
-    public HashMap<String, Integer> s = new HashMap<>();
 
     // Websites
     // --------------------------------------------------------------------------------------------
@@ -310,6 +310,101 @@ public class mainPackage {
         //Removing the HTML tags
 
         return result;
+
+    }
+
+    public String jsonToString() throws Exception {
+
+        String jsonFile = searchIPAddress(getIP());
+        JSONObject obj = new JSONObject(jsonFile);
+        String ip = obj.getString("status");
+        String ip1 = obj.getString("country");
+        String ip2 = obj.getString("countryCode");
+        String ip3 = obj.getString("region");
+        String ip4 = obj.getString("regionName");
+        String ip5 = obj.getString("city");
+        String ip6 = obj.getString("zip");
+        String ip7 = obj.getString("lat");
+
+        String ip8 = obj.getString("lon");
+        String ip9 = obj.getString("timezone");
+        String ip10 = obj.getString("isp");
+        String ip11 = obj.getString("org");
+        String ip12 = obj.getString("as");
+        String ip13 = obj.getString("query");
+
+
+        return ip10;
+    }
+
+
+    public String getIpQuery(String ip) throws Exception {
+        String jsonFile = searchIPAddress(ip);
+        JSONObject obj = new JSONObject(jsonFile);
+        return obj.getString("as");
+
+    }
+    public String getIpOrg(String ip) throws Exception {
+        String jsonFile = searchIPAddress(ip);
+        JSONObject obj = new JSONObject(jsonFile);
+        return obj.getString("org");
+
+    }
+    public String getIpIsp(String ip) throws Exception {
+        String jsonFile = searchIPAddress(ip);
+        JSONObject obj = new JSONObject(jsonFile);
+        return obj.getString("isp");
+
+    }
+    public String getIpTimezone(String ip) throws Exception {
+        String jsonFile = searchIPAddress(ip);
+        JSONObject obj = new JSONObject(jsonFile);
+        return obj.getString("timezone");
+
+    }
+
+    public String getIpLongitude(String ip) throws Exception {
+        String jsonFile = searchIPAddress(ip);
+        JSONObject obj = new JSONObject(jsonFile);
+        return obj.getString("lon");
+
+    }
+    public String getIpCode(String ip) throws Exception {
+        String jsonFile = searchIPAddress(ip);
+        JSONObject obj = new JSONObject(jsonFile);
+        return obj.getString("countryCode");
+
+    }
+    public String getIpRegion(String ip) throws Exception {
+        String jsonFile = searchIPAddress(ip);
+        JSONObject obj = new JSONObject(jsonFile);
+        return obj.getString("region");
+
+    }
+    public String getIpRegionName(String ip) throws Exception {
+        String jsonFile = searchIPAddress(ip);
+        JSONObject obj = new JSONObject(jsonFile);
+        return obj.getString("regionName");
+
+    }
+    public String getIpLatitude(String ip) throws Exception {
+        String jsonFile = searchIPAddress(ip);
+        JSONObject obj = new JSONObject(jsonFile);
+        return obj.getString("lat");
+
+    }
+
+    public String getIpZipCode(String ip) throws Exception {
+        String jsonFile = searchIPAddress(ip);
+        JSONObject obj = new JSONObject(jsonFile);
+        return obj.getString("zip");
+
+    }
+
+    public String getIpCity(String ip) throws Exception {
+        String jsonFile = searchIPAddress(ip);
+        JSONObject obj = new JSONObject(jsonFile);
+        return obj.getString("city");
 
     }
 
