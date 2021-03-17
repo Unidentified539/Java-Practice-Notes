@@ -6,6 +6,7 @@ import java.io.*;
 import java.net.InetAddress;
 import java.net.URI;
 import java.net.URL;
+import java.net.URLConnection;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -598,13 +599,58 @@ public class mainPackage {
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         return response.body();
     }
+    public String getGithubProfileData(String githubUsername) throws IOException {
+        mainPackage allFunctions = new mainPackage();
+        // Make a URL to the web page
+        URL url = new URL("https://api.github.com/users/Unidentified539");
+
+        URLConnection con = url.openConnection();
+        InputStream is =con.getInputStream();
 
 
 
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+
+        String line = null;
+
+        while ((line = br.readLine()) != null) {
+            JSONObject obj = new JSONObject(line);
+            return "Username: " + obj.get("login") + "\n" +
+            "Github ID: " + obj.get("id") + "\n" +
+            "Node ID: " + obj.get("node_id")+ "\n" +
+            "Avatar URL: " + obj.get("avatar_url")+"\n" +
+            "Gravatar ID: " + obj.get("gravatar_id")+"\n" +
+            "Github Profile URL: " + obj.get("html_url")+"\n" +
+            "Followers URL: " + obj.get("followers_url")+"\n" +
+            "Following URL: " + obj.get("following_url")+"\n" +
+            "Gists URL: " + obj.get("gists_url")+"\n" +
+            "Stared URL: " + obj.get("starred_url")+"\n" +
+            "Subscriptions URL: " + obj.get("subscriptions_url")+"\n" +
+            "Organizations URL: " + obj.get("organizations_url")+"\n" +
+            "Repo's URL: " + obj.get("repos_url")+"\n" +
+            "Events URl: " + obj.get("events_url")+"\n" +
+            "Type: " + obj.get("type")+"\n" +
+            "Site Admin: "  +obj.get("site_admin")+"\n" +
+            "Name: " + obj.getString("name")+"\n" +
+            "Company: " + obj.get("company")+"\n" +
+            "Blog: " + obj.get("blog")+"\n" +
+            "Location: " + obj.get("location")+"\n" +
+            "Email: " + obj.get("email")+"\n" +
+            "Up for hire: " + obj.get("hireable")+"\n" +
+            "Bio: " + obj.getString("bio")+"\n" +
+            "Twitter Username: " + obj.get("twitter_username")+"\n" +
+            "Public Repo's: " + obj.get("public_repos")+"\n" +
+            "Public Gist's: " + obj.get("public_gists")+"\n" +
+            "Followers: " + obj.get("followers")+"\n" +
+            "Following: " + obj.get("following")+"\n" +
+            "Account Creation Date: " + obj.get("created_at")+"\n" +
+            "Updated at: " + obj.get("updated_at");
 
 
+        }
 
 
-
-
+        return line;
+        }
 }
+
