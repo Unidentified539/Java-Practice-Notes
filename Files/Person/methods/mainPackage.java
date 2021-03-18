@@ -1,5 +1,11 @@
 package methods;
-import org.json.JSONException;
+import io.github.eliux.mega.Mega;
+import io.github.eliux.mega.MegaSession;
+import io.kvstore.sdk.KVStore;
+import io.kvstore.sdk.clients.CollectionsClient;
+import io.kvstore.sdk.clients.ItemsClient;
+import io.kvstore.sdk.clients.KVStoreClient;
+import io.kvstore.sdk.exceptions.KVStoreException;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -14,6 +20,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
+
 
 public class mainPackage {
 
@@ -651,6 +658,49 @@ public class mainPackage {
 
 
         return line;
+    }
+
+    public ItemsClient.ItemValue getItem(String key, String collection) {
+        KVStoreClient kvStore = KVStore.instance("ef6316c95db6d55bc4f8b87546a8d28d137e92aee67091e21a76951f80f5543f");
+        ItemsClient itemsClient = kvStore.itemsClient();
+        // Get the ItemsClient handler instance to perform operations on values
+        ItemsClient.ItemValue item = itemsClient.get(collection, key);
+
+        return item;
+    }
+
+    public void newItem(String collection, String key, Object value) {
+        // Get the KVStoreClient instance
+        KVStoreClient kvStore = KVStore.instance("ef6316c95db6d55bc4f8b87546a8d28d137e92aee67091e21a76951f80f5543f");
+
+        // Get the CollectionsClient handler to perform operations on collections
+        CollectionsClient collectionsClient = kvStore.collectionsClient();
+        try {
+            collectionsClient.create(collection);
+            collectionsClient.update(collection, new CollectionsClient.UpdateCollection().setPublicRead(true));
+        } catch (KVStoreException e) {
+            System.out.println("Collection already there!");
         }
+
+        // Get the ItemsClient handler instance to perform operations on values
+        ItemsClient itemsClient = kvStore.itemsClient();
+
+        itemsClient.put(collection, key, (String) value);
+    }
+
+    public void putFileToCloud(String filePath, String remoteDirectoryPath) {
+        // Add: MEGA_EMAIL=solomonaziel9@gmail.com;MEGA_PWD=Azielsolomon123
+        ///Starts the session or use an existing one
+        MegaSession sessionMega = Mega.init();
+
+        //Uploads a local file to a remote folder which might not exist
+        sessionMega.uploadFile(filePath, remoteDirectoryPath)
+                .createRemotePathIfNotPresent()
+                .run();
+
+    }
+
+
+
 }
 
