@@ -1,6 +1,8 @@
 package methods;
+
 import io.github.eliux.mega.Mega;
 import io.github.eliux.mega.MegaSession;
+import io.github.eliux.mega.auth.MegaAuthCredentials;
 import io.kvstore.sdk.KVStore;
 import io.kvstore.sdk.clients.CollectionsClient;
 import io.kvstore.sdk.clients.ItemsClient;
@@ -623,35 +625,35 @@ public class mainPackage {
         while ((line = br.readLine()) != null) {
             JSONObject obj = new JSONObject(line);
             return "Username: " + obj.get("login") + "\n" +
-            "Github ID: " + obj.get("id") + "\n" +
-            "Node ID: " + obj.get("node_id")+ "\n" +
-            "Avatar URL: " + obj.get("avatar_url")+"\n" +
-            "Gravatar ID: " + obj.get("gravatar_id")+"\n" +
-            "Github Profile URL: " + obj.get("html_url")+"\n" +
-            "Followers URL: " + obj.get("followers_url")+"\n" +
-            "Following URL: " + obj.get("following_url")+"\n" +
-            "Gists URL: " + obj.get("gists_url")+"\n" +
-            "Stared URL: " + obj.get("starred_url")+"\n" +
-            "Subscriptions URL: " + obj.get("subscriptions_url")+"\n" +
-            "Organizations URL: " + obj.get("organizations_url")+"\n" +
-            "Repo's URL: " + obj.get("repos_url")+"\n" +
-            "Events URl: " + obj.get("events_url")+"\n" +
-            "Type: " + obj.get("type")+"\n" +
-            "Site Admin: "  +obj.get("site_admin")+"\n" +
-            "Name: " + obj.getString("name")+"\n" +
-            "Company: " + obj.get("company")+"\n" +
-            "Blog: " + obj.get("blog")+"\n" +
-            "Location: " + obj.get("location")+"\n" +
-            "Email: " + obj.get("email")+"\n" +
-            "Up for hire: " + obj.get("hireable")+"\n" +
-            "Bio: " + obj.getString("bio")+"\n" +
-            "Twitter Username: " + obj.get("twitter_username")+"\n" +
-            "Public Repo's: " + obj.get("public_repos")+"\n" +
-            "Public Gist's: " + obj.get("public_gists")+"\n" +
-            "Followers: " + obj.get("followers")+"\n" +
-            "Following: " + obj.get("following")+"\n" +
-            "Account Creation Date: " + obj.get("created_at")+"\n" +
-            "Updated at: " + obj.get("updated_at");
+                    "Github ID: " + obj.get("id") + "\n" +
+                    "Node ID: " + obj.get("node_id")+ "\n" +
+                    "Avatar URL: " + obj.get("avatar_url")+"\n" +
+                    "Gravatar ID: " + obj.get("gravatar_id")+"\n" +
+                    "Github Profile URL: " + obj.get("html_url")+"\n" +
+                    "Followers URL: " + obj.get("followers_url")+"\n" +
+                    "Following URL: " + obj.get("following_url")+"\n" +
+                    "Gists URL: " + obj.get("gists_url")+"\n" +
+                    "Stared URL: " + obj.get("starred_url")+"\n" +
+                    "Subscriptions URL: " + obj.get("subscriptions_url")+"\n" +
+                    "Organizations URL: " + obj.get("organizations_url")+"\n" +
+                    "Repo's URL: " + obj.get("repos_url")+"\n" +
+                    "Events URl: " + obj.get("events_url")+"\n" +
+                    "Type: " + obj.get("type")+"\n" +
+                    "Site Admin: "  +obj.get("site_admin")+"\n" +
+                    "Name: " + obj.getString("name")+"\n" +
+                    "Company: " + obj.get("company")+"\n" +
+                    "Blog: " + obj.get("blog")+"\n" +
+                    "Location: " + obj.get("location")+"\n" +
+                    "Email: " + obj.get("email")+"\n" +
+                    "Up for hire: " + obj.get("hireable")+"\n" +
+                    "Bio: " + obj.getString("bio")+"\n" +
+                    "Twitter Username: " + obj.get("twitter_username")+"\n" +
+                    "Public Repo's: " + obj.get("public_repos")+"\n" +
+                    "Public Gist's: " + obj.get("public_gists")+"\n" +
+                    "Followers: " + obj.get("followers")+"\n" +
+                    "Following: " + obj.get("following")+"\n" +
+                    "Account Creation Date: " + obj.get("created_at")+"\n" +
+                    "Updated at: " + obj.get("updated_at");
 
 
         }
@@ -697,10 +699,34 @@ public class mainPackage {
         sessionMega.uploadFile(filePath, remoteDirectoryPath)
                 .createRemotePathIfNotPresent()
                 .run();
+    }
+
+
+    public void toDatabase(Object data, String remoteDirectoryPath, String fileName) {
+        MegaSession sessionMega = Mega.login(MegaAuthCredentials.createFromEnvVariables());
+
+        try {
+            File myObj = new File(fileName);
+            if (myObj.createNewFile()) {
+            } else {
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FileWriter myWriter = new FileWriter(fileName);
+            myWriter.write(String.valueOf(data));
+            myWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        sessionMega.uploadFile(fileName, remoteDirectoryPath);
+        deleteFile(fileName);
+
 
     }
 
 
 
 }
-
