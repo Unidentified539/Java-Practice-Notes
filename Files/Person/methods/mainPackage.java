@@ -8,6 +8,7 @@ import io.kvstore.sdk.clients.CollectionsClient;
 import io.kvstore.sdk.clients.ItemsClient;
 import io.kvstore.sdk.clients.KVStoreClient;
 import io.kvstore.sdk.exceptions.KVStoreException;
+import org.jasypt.util.text.BasicTextEncryptor;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -702,27 +703,80 @@ public class mainPackage {
     }
 
 
-    public void toDatabase(Object data, String remoteDirectoryPath, String fileName) {
-        MegaSession sessionMega = Mega.login(MegaAuthCredentials.createFromEnvVariables());
+    public static void toDatabase1(String data, String remotePath, String name, int key) {
+        mainPackage a = new mainPackage();
+        a.newFile(name);
+        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+        textEncryptor.setPassword(String.valueOf(key));
+        String myEncryptedText = textEncryptor.encrypt(data);
+        String plainText = textEncryptor.decrypt(myEncryptedText);
+        a.writeToFile(name,myEncryptedText);
+        a.putFileToCloud(name, remotePath);
+    }
 
-        try {
-            File myObj = new File(fileName);
-            if (myObj.createNewFile()) {
-            } else {
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static String decrypt1(String decryptThis, String key) {
+        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+        textEncryptor.setPassword(String.valueOf(key));
+        String plainText = textEncryptor.decrypt(decryptThis);
+        return plainText;
+    }
 
-        try {
-            FileWriter myWriter = new FileWriter(fileName);
-            myWriter.write(String.valueOf(data));
-            myWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+    public static void decrypt_OR_encrypt() throws FileNotFoundException {
+        mainPackage a = new mainPackage();
+        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("ENCRYPTOR And DESCRIPTOR!!!");
+        System.out.println("""
+                Options:
+                Enter 1 to Encrypt file
+                Enter 2 to Encrypt text
+                Enter 3 to Decrypt file
+                Enter 4 to Decrypt text""");
+        int request = sc.nextInt();
+        switch (request) {
+            case 1:
+                System.out.println("Enter file path");
+                String filepath = sc.next();
+                System.out.println("Enter password *REMEMBER THIS, THIS IS HOW YOU DECRYPT YOUR FILE");
+                String password = sc.nextLine();
+                String file = a.readFile(filepath);
+                textEncryptor.setPassword(password);
+                String myEncryptedText = textEncryptor.encrypt(file);
+                System.out.println("Encrypted Text: " + myEncryptedText);
+
+            case 2:
+                System.out.println("Enter text to encrypt");
+                String filepath0 = sc.next();
+                System.out.println("Enter password *REMEMBER THIS, THIS IS HOW YOU DECRYPT YOUR TEXT");
+                String password0 = sc.next();
+                textEncryptor.setPassword(password0);
+                String myEncryptedText0 = textEncryptor.encrypt(filepath0);
+                System.out.println("Encrypted Text: " + myEncryptedText0);
+                System.exit(0);
+
+
+            case 3:
+                System.out.println("Enter file to decrypt");
+                String filepath1 = sc.next();
+                String file1 = a.readFile(filepath1);
+                System.out.println("Enter file password");
+                String password2 = sc.next();
+                textEncryptor.setPassword(password2);
+                String plainText = textEncryptor.decrypt(file1);
+                System.out.println("DECRYPTED: " + plainText);
+                System.exit(0);
+
+            case 4:
+                System.out.println("Enter text to decrypt");
+                String se = sc.next();
+                System.out.println("Enter File Password");
+                String pass = sc.next();
+                textEncryptor.setPassword(pass);
+                String plain = textEncryptor.decrypt(se);
+                System.out.println(plain);
+                System.exit(0);
+
         }
-        sessionMega.uploadFile(fileName, remoteDirectoryPath);
-        deleteFile(fileName);
 
 
     }
