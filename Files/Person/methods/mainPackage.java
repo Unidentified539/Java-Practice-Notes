@@ -714,11 +714,18 @@ public class mainPackage {
         a.putFileToCloud(name, remotePath);
     }
 
-    public static String decrypt1(String decryptThis, String key) {
+    public static String decrypt(String decryptThis, String key) {
         BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
         textEncryptor.setPassword(String.valueOf(key));
         String plainText = textEncryptor.decrypt(decryptThis);
         return plainText;
+    }
+
+    public String encrypt(String encryptThis, String yourKey) {
+        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+        textEncryptor.setPassword(yourKey);
+        String myEncryptedText = textEncryptor.encrypt(encryptThis);
+        return myEncryptedText;
     }
 
     public static void decrypt_OR_encrypt() throws FileNotFoundException {
@@ -779,8 +786,38 @@ public class mainPackage {
         }
 
 
-    }
 
+
+
+    }
+    public void terminalApplication() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("""
+                Would you like to encrypt or decrypt
+                Enter 1 to Encrypt
+                Enter 2 to Decrypt
+                """);
+        Integer c = sc.nextInt();
+        if (c.equals(1)) {
+            System.out.println("Enter the text you want to encrypt");
+            String text = sc.next();
+            System.out.println("Enter a password for you encryption");
+            String password = sc.next();
+            System.out.println("Encrypting...");
+            System.out.println(encrypt(text, password));
+        }
+
+        else if (c.equals(2)) {
+            System.out.println("Enter the encrypted code");
+            String encryptedCode = sc.next();
+            System.out.println("Enter your key");
+            String key = sc.next();
+            System.out.println(decrypt(encryptedCode, key));
+        }
+        else {
+            System.out.println("You probably did something wrong...");
+        }
+    }
 
 
 }

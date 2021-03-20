@@ -12,7 +12,9 @@ public class Main {
     // Replace server name, username, and password with your credentials
     public static void main(String[] args) throws IOException {
         mainPackage a = new mainPackage();
-        a.decrypt_OR_encrypt();
+        System.out.println(a.encrypt("Hello my name is Azi", "password"));
+        System.out.println(a.decrypt("8XQsiDt8NFwkMELFm4lpB/rltQ4m4LtCkjQCfZz/kAo=", "password"));
+
     }
 
 
