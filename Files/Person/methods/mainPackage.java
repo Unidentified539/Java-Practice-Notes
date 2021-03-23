@@ -2,7 +2,6 @@ package methods;
 
 import io.github.eliux.mega.Mega;
 import io.github.eliux.mega.MegaSession;
-import io.github.eliux.mega.auth.MegaAuthCredentials;
 import io.kvstore.sdk.KVStore;
 import io.kvstore.sdk.clients.CollectionsClient;
 import io.kvstore.sdk.clients.ItemsClient;
@@ -703,7 +702,7 @@ public class mainPackage {
     }
 
 
-    public static void toDatabase1(String data, String remotePath, String name, int key) {
+    public void toDatabase1(String data, String remotePath, String name, int key) {
         mainPackage a = new mainPackage();
         a.newFile(name);
         BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
@@ -714,10 +713,10 @@ public class mainPackage {
         a.putFileToCloud(name, remotePath);
     }
 
-    public static String decrypt(String decryptThis, String key) {
+    public String decryptThis(Object decryptThis, Object key) {
         BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
         textEncryptor.setPassword(String.valueOf(key));
-        String plainText = textEncryptor.decrypt(decryptThis);
+        String plainText = textEncryptor.decrypt((String) decryptThis);
         return plainText;
     }
 
@@ -728,7 +727,7 @@ public class mainPackage {
         return myEncryptedText;
     }
 
-    public static void decrypt_OR_encrypt() throws FileNotFoundException {
+    public void decrypt_OR_encrypt() throws FileNotFoundException {
         mainPackage a = new mainPackage();
         BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
         Scanner sc = new Scanner(System.in);
@@ -812,12 +811,24 @@ public class mainPackage {
             String encryptedCode = sc.next();
             System.out.println("Enter your key");
             String key = sc.next();
-            System.out.println(decrypt(encryptedCode, key));
+            System.out.println(decryptThis(encryptedCode, key));
         }
         else {
             System.out.println("You probably did something wrong...");
         }
     }
+
+    public void uploadString(Object object, String remotePath, String encryptQuestion, String key, String databaseName) {
+        if (encryptQuestion.equals("y")) {
+            newFile("/home/dev/" + databaseName + ".txt");
+            String encrypted  = encrypt(String.valueOf(object), key);
+            writeToFile("/home/dev/" + databaseName + ".txt", encrypted);
+            putFileToCloud("/home/dev/" + databaseName + ".txt", remotePath);
+            deleteFile("/home/dev/" + databaseName + ".txt");
+        }
+
+    }
+
 
 
 }
