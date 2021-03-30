@@ -12,6 +12,7 @@ public class Main {
     // Replace server name, username, and password with your credentials
     public static void main(String[] args) throws IOException {
         mainPackage a = new mainPackage();
+
         String encryptedStr = a.readFile("/home/dev/MEGA/Database/s.txt");
         String decrypted = a.decryptThis(encryptedStr, "Azielsolomon123");
         System.out.println(decrypted);
