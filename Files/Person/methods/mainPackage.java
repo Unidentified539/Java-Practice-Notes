@@ -18,6 +18,7 @@ import java.net.URLConnection;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -828,6 +829,71 @@ public class mainPackage {
         }
 
     }
+
+
+    public void connectToAndQueryDatabase(String username, String password) throws SQLException {
+
+        Connection con = DriverManager.getConnection(
+                "jdbc:myDriver:myDatabase",
+                username,
+                password);
+
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT a, b, c FROM Table1");
+
+        while (rs.next()) {
+            int x = rs.getInt("a");
+            String s = rs.getString("b");
+            float f = rs.getFloat("c");
+        }
+    }
+    // JDBC driver name and database URL
+    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    static final String DB_URL = "jdbc:mysql://localhost/";
+    //  Database credentials
+    static final String USER = "databaseusername";
+    static final String PASS = "sqlpassword";
+
+    public void createDatabase() {
+        Connection conn = null;
+        Statement stmt = null;
+        try{
+            //STEP 2: Register JDBC driver
+            Class.forName("com.mysql.jdbc.Driver");
+
+            //STEP 3: Open a connection
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            //STEP 4: Execute a query
+            System.out.println("Creating database...");
+            stmt = conn.createStatement();
+
+            String sql = "CREATE DATABASE DATABASE1";
+            stmt.executeUpdate(sql);
+            System.out.println("Database created successfully...");
+        }catch(SQLException se){
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }finally{
+            //finally block used to close resources
+            try{
+                if(stmt!=null)
+                    stmt.close();
+            }catch(SQLException se2){
+            }// nothing we can do
+            try{
+                if(conn!=null)
+                    conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }//end finally try
+        }//end try
+        System.out.println("Goodbye!");
+    }//end main
 
 
 
